@@ -4,11 +4,11 @@
    --space-l: 24px;
    --space-b: 36px;
 
-   --size-m: 16px;
-   --size-s: 20px;
-   --size-d: 24px;
-   --size-l: 30px;
-   --size-b: 36px;
+   --size-d: 16px;
+   --size-dx: 20px;
+   --size-l: 24px;
+   --size-b: 30px;
+
 
    --color-border: #dee2e6;
    --color-primary: rgb(46, 46, 255);
@@ -26,6 +26,7 @@
 .page{
     background: var(--color-white);
     padding: 0 15px;
+    font-family: 'Roboto', sans-serif;
 
     display: flex;
     justify-content: center;
@@ -82,7 +83,7 @@
 
 .nav_link{
     color: var(--color-text);
-    font-size: var(--size-d);
+    font-size: var(--size-dx);
     text-decoration: none;
 }
 
@@ -102,7 +103,7 @@
 }
 
 .footer_copyright{
-    font-size: var(--size-s);
+    font-size: var(--size-d);
     color: #6c757d;
 
     display: block;
@@ -110,7 +111,7 @@
 }
 
 .footer_title{
-    font-size: var(--size-l);
+    font-size: var(--size-b);
     color: var(--color-title);
 
     display: block;
@@ -144,7 +145,7 @@
 }
 
 .hero_text{
-   font-size: var(--size-m);
+   font-size: var(--size-d);
    color: var(--color-text);
    font-weight: var(--weight-text);
    line-height: 170%;
@@ -153,7 +154,7 @@
 .hero_button{
 
    display: inline-block;
-   font-size: var(--size-m);
+   font-size: var(--size-d);
    text-decoration: none; 
 
    background-color: #6C757D;
@@ -175,6 +176,7 @@
    display: flex;
    flex-direction: column;
    gap: var(--space-l);  
+   max-width: 270px;
 }
 
 .card_image{
@@ -184,13 +186,13 @@
 }
 
 .card_title{
-   font-size: var(--size-l);
+   font-size: var(--size-b);
    font-weight: var(--weight-title);
    color: var( --color-title);
 }
 
 .card_text{
-   font-size: var(--size-m);
+   font-size: var(--size-d);
    font-weight: var(--weight-text);
    color: var( --color-text);
 }
@@ -228,7 +230,7 @@
 }
 
 .actions_title{
-   font-size: var(--size-d);
+   font-size: var(--size-l);
    font-weight: var(--weight-text);
    color: var(--color-white);
 }
@@ -240,6 +242,6 @@
    width: 116px;
    color: var(--color-title);
    text-align: center;
-   font-size: var(--size-s);
+   font-size: var(--size-d);
    font-weight: var(--weight-text);
 }
