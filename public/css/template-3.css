@@ -1,3 +1,36 @@
+@keyframes fly{
+   from{
+      top: 80px;
+      left: 0;
+
+      background: red;
+   }
+
+   25%{
+      top: 500px;
+      left: 500px;
+
+      background: blue;
+
+      width: 100;
+
+      border-radius: 50%;
+   }
+
+   50%{
+      left: 0;
+
+      background: yellow;
+   }
+
+   to{
+      top: 80px;
+      left: 0;
+
+      background: purple;
+   }
+}
+
 :root{
    --space-m: 12px;
    --space-xm: 16px;
@@ -18,6 +51,8 @@
 
    --weight-title: 500;
    --weight-text: 400;
+
+   --page-width: 760px;
 }
 
 /*=========================================*/
@@ -30,13 +65,15 @@
 }
 
 .page_content{
-    max-width: 960px;
+    max-width: var(--page-width);
     width: 100%;
 
     display: flex;
     flex-direction: column;
 
     gap: 80px;
+
+    /* padding-top: 74px; */
 }
 
 /*==========================================*/
@@ -47,6 +84,19 @@
 
     display: flex;
     justify-content: space-between;
+
+    /* position: fixed; */
+    position: sticky;
+
+    max-width: var(--page-width);
+    width: 100%;
+
+    top: 0;
+    /* left: calc(50% - (var(--page-width) / 2)); */
+
+    background-color: var(--color-white);
+
+    z-index: 1;
 }
 
 .logo{
@@ -82,6 +132,11 @@
     color: var(--color-text);
     font-size: var(--size-d);
     text-decoration: none;
+
+    line-height: 100%;
+
+    transition-property: color;
+    transition-duration: 2s;
 }
 
 .nav_link:hover{
@@ -190,6 +245,12 @@
    text-decoration: none; 
    padding: var(--space-m) var(--space-xm);
    border-radius: var(--border-radius);
+
+   /* transition: opacity 1s, background-color 1s; */
+
+   transition-property: opacity, background-color, color;
+   transition-duration: 1s;
+
 }
 
 .card_button{
@@ -199,6 +260,8 @@
 
 .button:hover{
    opacity: 0.7;
+   background-color: yellow;
+   color: #212529;
 }
 
 .form{
@@ -234,4 +297,135 @@
    width: 100%;
    max-width: 160px;
    color: var(--color-text);
+}
+
+/* .hero_image{
+   /* position: relative;
+   left: 100%;
+   position: absolute;
+   left: 0px;
+   bottom: 0px;
+} 
+
+.hero{
+   position: relative;
+} */
+
+.hero_slider_icon{
+   background: var(--color-primary);
+
+   width: 30px;
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   border-radius: var(--border-radius);
+   color: var(--color-white);
+   
+   position: absolute;
+
+   top: calc(50% - 15px);
+}
+
+.hero_slider_icon:hover{
+   opacity: 0.5;
+   cursor: pointer;
+}
+
+.hero_slider{
+   position: relative;
+}
+
+.hero_slider_left{
+   left: var(--space-l);
+}
+
+.hero_slider_right{
+   right: var(--space-l);
+}
+
+.modal{
+   /* position: sticky; */
+   position: fixed;
+   top: 180px;
+   /* top: calc(50% - 100px); */
+   /* left: calc(50% - 100px); */
+   /* right: 24px; */
+   left: 200px;
+
+   /* height: 100px; */
+   width: 600px;
+   background: darkblue;
+   color: var(--color-white);
+
+   padding: 24px;
+
+   border-radius: 24px;
+   line-height: 150%;
+
+   z-index: 2;
+
+   /* transition-property: top;
+   transition-duration: 3s;
+   transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+   transition-delay: 3s; */
+}
+
+ body:hover .modal{ 
+   animation-play-state: paused;
+   /* top: 600px; 
+   animation: fly;
+   animation-duration: 4s;
+   animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+   animation-delay: 3s;*/
+} 
+
+.modal{
+   animation: fly;
+   animation-duration: 4s;
+   animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+   animation-delay: 3s;
+
+   /* animation-iteration-count: infinite; */
+
+   animation-direction: alternate;
+
+   animation-fill-mode: both; 
+}
+
+.modal:hover{
+   transform-origin: 1000px;
+}
+
+.modal_image{
+   height: 60px;
+   width: 100px;
+   float: left;
+
+   margin-right: 12px;
+   margin-top: 12px;
+
+   object-fit: contain;
+
+   background-color: aqua;
+
+   object-position: top right;
+}
+
+.modal_text{
+   clear: left;
+}
+
+.hero{
+   user-select: none;
+}
+
+.input{
+   caret-color: var(--color-primary);
+   border: 1px solid var(--color-border);
+}
+
+:root{
+   scroll-behavior: smooth;
 }
