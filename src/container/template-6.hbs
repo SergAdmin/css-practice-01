@@ -1,0 +1,108 @@
+<header class="header">
+    <div class="">
+        {{> logo}}
+    </div>
+    
+    <nav class="header_nav">
+        <div class="header_nav_right">
+            {{> nav list=header}}
+        </div>
+    </nav>
+</header>
+
+<hero class="hero">
+    
+    {{#with info}}
+        <div class="info">
+            <h1 class="info_title">{{title}}</h1>
+            <p class="info_text">{{description}}</p>      
+            
+        </div>
+    {{/with}}
+    
+    
+    {{#with form}}
+        <form class="form">
+         
+                <div class="form_input_list">
+                    {{#each inputs}}
+                    <input type="{{type}}" placeholder="{{placeholder}}" class="form_input" 
+                        name="{{name}}" id="form-input-{{id}}"/>
+                    {{/each}}
+                </div>
+
+                <div class="form_checkbox">
+                    <input type="checkbox" name="{{checkbox.name}}" id="{{checkbox.name}}">
+                    <div></div>
+                    <label for="{{checkbox.name}}">{{checkbox.label}}</label>
+                </div>
+                
+                    <button type="submit" class="form_button">{{button}}</button>
+
+            <p class="form_info">{{info}}</p>
+        </form>
+    {{/with}}
+</hero>
+
+<main class="main">
+    
+    {{#with updates}}
+            <div class="main_card_title">
+                <h6 class="main_title">{{title}}</h6>
+            </div>
+        {{#each list}}
+            <div class="main_card">
+                <div class="image_card_{{@index}}">
+                    <img src="#" alt="32x32" >
+                </div> 
+                <div class="main_card_list">
+                    <h2>{{nickname}}</h2>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        {{/each}}
+
+        <a href="{{show_all.url}}" class="show_link">{{show_all.text}}</a>
+
+    {{/with}}
+</main>
+
+<feedback class="feedback">
+    
+    {{#with expirience}}
+        <div class="feedback_badge">
+            <span>{{badge}}</span>
+        </div>
+        <div class="feedback_title">
+            
+            <strong>{{title}}</strong>
+        </div>
+        <div class="feedback_card_list">
+            {{#each list}}
+                <div class="feedback_card">
+
+                    <strong>{{name}}</strong>
+                    <p>{{details}}</p>
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}    
+</feedback>
+
+ 
+
+<footer class="footer">
+    <div>
+        {{> logo}}
+        <span class="footer_copyright">Copyright 2023-2024</span>    
+    </div>
+    
+    {{#each footer}}
+    <div>
+        <span class="footer_title">{{title}}</span>  
+        {{> nav list=links isVertical=true}}
+    </div>
+    {{/each}}
+</footer>
+
+
