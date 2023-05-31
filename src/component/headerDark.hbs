@@ -1,0 +1,24 @@
+{{#with text}}
+    <div class="header_flex">
+        <div class="logo">
+                <p>{{brandName}}</p>
+        
+        </div>
+    
+        <div class="nav {{#if isVertical}}nav_vertical{{else}}nav_inline{{/if}}">
+            {{#each links}}
+                <a  href="{{url}}" class="nav_link">{{text}}</a>
+            {{/each}}
+        </div>
+    </div>
+    <div class="header_inLine">
+        
+        {{#with ad}} 
+            <div class="ad">      
+                <a class="ad_link" href="{{url}}">Ad</a>
+                <span class="ad_link_text">{{text}}</span>
+            </div>   
+        {{/with}}
+        <p class="users_value">User online: {{userOnline}}</p>
+    </div>
+{{/with}}

@@ -143,7 +143,7 @@
 
 .messages{
    /* flex-grow: 20; */
-   max-width: 620ph;
+   max-width: 620px;
    width: 100%;
 
    background-color: var(--color-white);
@@ -258,7 +258,7 @@
 
 .form{
    /* flex-grow: 11; */
-   max-width: 340ph;
+   max-width: 340px;
    width: 100%;
 
    background-color: var(--color-white);

@@ -1,0 +1,53 @@
+<header class="header">
+    {{> headerDark text=header}}
+</header>
+
+<hero class="hero">
+    
+    {{#with hero}}
+        <div class="hero_article">
+            <h1 class="hero_title">{{title}}</h1>
+            <p class="hero_text">{{description}}</p>  
+            <div class="hero_footer">   
+                <div class="hero_button">
+                    <button class="hero_button_text" href="{{button.url}}" >{{button.text}}</button>
+                </div>
+            </div> 
+        </div>
+    {{/with}}
+    
+    
+    
+</hero>
+
+<div class="info">
+    {{#with about}}
+        <h1>{{heading}}</h1>
+        <p>{{info}}</p>
+    {{/with}}
+</div>    
+
+<main class="main">
+    <div class="main_top">
+        <div class="main_header">
+            <h1>Our Articles</h1>
+        </div>
+        <div class="main_header_button">
+            <a class="main_header_inLine" href="#">View All</a>
+        </div>
+    </div>
+    <div class="main_article">
+
+        {{> articleCardDark text=articles}}
+
+    </div>
+</main>
+
+<footer class="footer">
+    {{> footerDark text=footer}}
+</footer>
+
+ 
+
+
+
